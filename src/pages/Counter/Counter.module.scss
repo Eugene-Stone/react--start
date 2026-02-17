@@ -37,15 +37,16 @@
 		cursor: pointer;
 		margin: 0 10px;
 		transition: all 0.05s ease-in-out;
+		min-width: 120px;
 
-		&.minus {
+		&.plus {
 			background-color: #e63946;
 			color: #fff;
 			//   box-shadow: 0 4px 0 darken(#e63946, 10%);
 			//   border: 1px solid darken(#e63946, 15%);
 		}
 
-		&.plus {
+		&.minus {
 			background-color: #2a9d8f;
 			color: #fff;
 			//   box-shadow: 0 4px 0 darken(#2a9d8f, 10%);
