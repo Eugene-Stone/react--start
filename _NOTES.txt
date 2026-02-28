@@ -1,11 +1,37 @@
 https://vite.dev/guide/static-deploy
 
 
---open - Автоматическое открытие браузера
+--open - Автоматическое открытие браузера в файл package.json
 "scripts": {
 	"start": "vite --open",
 	"dev": "vite --open",
 },
+
+
+В файле eslint.config.js исправить, чтобы убрать предупреждения
+rules: {
+	// 'no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z_]' }],
+	'no-unused-vars': 'off',
+},
+
+В файле vite.config.js
+export default defineConfig({
+	plugins: [react()],
+
+	// Настройка ALIAS
+	resolve: {
+		alias: {
+			"@": path.resolve(__dirname, "./src"),
+			"@components": path.resolve(__dirname, "./src/components"),
+		},
+	},
+
+	// base: "/react-router", // Для корректной работы GitHub Pages, нужно еще добавить строчку  "postbuild": "cp dist/index.html dist/404.html", в package.json в строке "scripts"
+
+	// server: {
+	//   open: true, // Открытие в браузере при запуске
+	// }
+});
 
 
 1️⃣ Фейковый backend, который работает как настоящий REST API.
